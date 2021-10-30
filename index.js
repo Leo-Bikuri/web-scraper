@@ -11,7 +11,7 @@ axios(url)
         const html = response.data
         const $ = cheerio.load(html)
         const articles = []
-        //Used to look for specific elements or classes
+        //Used to look for specific elements or classes on the webpage
         $('.core', html).each(function(){
             const title = $(this).find('')
             const url = $(this).find('a').attr('href')//example looking for href in a tag
@@ -23,4 +23,4 @@ axios(url)
         console.log(html)
     }).catch(err => console.log(err))
 
-app.listen(PORT , ()=> console.log('server running on PORT'))
+app.listen(PORT , ()=> console.log('server running'))
